@@ -3,7 +3,7 @@ const { title, link, imageUrl, data } = Astro.props;
 const { Content } = await data.render();
 ---
 
-<div class="card animation-card">
+<article class="card animation-card">
   <div class="card__picture card__picture">&nbsp;</div>
   <h2 class="card__heading">
     <a href={link}
@@ -13,7 +13,7 @@ const { Content } = await data.render();
   <div class="card__details">
     <Content />
   </div>
-</div>
+</article>
 
 <style lang="scss" define:vars={{ imageUrl }}>
   @use "../styles/abstracts/" as *;
