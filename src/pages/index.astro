@@ -4,20 +4,7 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 import Welcome from "../components/Welcome.astro";
-import Card from "../components/Card.astro";
-import { getCollection } from "astro:content";
-
-const projects = await getCollection("project");
-const groupedProjects = projects?.reduce(
-  (acc, item) => {
-    if (acc[acc.length - 1].length >= 3) {
-      return [...acc, [item]];
-    }
-    acc[acc.length - 1].push(item);
-    return acc;
-  },
-  [[]]
-);
+import Projects from "../components/Projects.astro";
 ---
 
 <!doctype html>
@@ -29,25 +16,7 @@ const groupedProjects = projects?.reduce(
     <Header title={SITE_TITLE} />
     <main>
       <Welcome />
-
-      <div class="row u-margin-top-huge" id="projects">
-        {
-          groupedProjects.map((group) => (
-            <div class="row">
-              {group.map((project) => (
-                <div class="col-1-of-3">
-                  <Card
-                    title={project.data.title}
-                    imageUrl={`url(${project.data.heroImage})`}
-                    link={project.data.link}
-                    data={project}
-                  />
-                </div>
-              ))}
-            </div>
-          ))
-        }
-      </div>
+      <Projects />
     </main>
     <Footer />
   </body>

@@ -1,0 +1,35 @@
+---
+import { getCollection } from "astro:content";
+import Card from "./Card.astro";
+
+const projects = await getCollection("project");
+const groupedProjects = projects?.reduce(
+  (acc, item) => {
+    if (acc[acc.length - 1].length >= 3) {
+      return [...acc, [item]];
+    }
+    acc[acc.length - 1].push(item);
+    return acc;
+  },
+  [[]]
+);
+---
+
+<div class="row u-margin-top-huge" id="projects">
+  {
+    groupedProjects.map((group) => (
+      <div class="row">
+        {group.map((project) => (
+          <div class="col-1-of-3">
+            <Card
+              title={project.data.title}
+              imageUrl={`url(${project.data.heroImage})`}
+              link={project.data.link}
+              data={project}
+            />
+          </div>
+        ))}
+      </div>
+    ))
+  }
+</div>
