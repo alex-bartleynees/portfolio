@@ -1,0 +1,111 @@
+@use "../abstracts/" as *;
+
+body {
+  font-family: "Mulish", sans-serif;
+  font-weight: 300;
+  line-height: 1.7;
+  letter-spacing: 1px;
+  color: var(--color-black);
+}
+
+.navigation-heading {
+  font-size: $default-font-size;
+  font-weight: 600;
+
+  .dot {
+    height: 0.5rem;
+    width: 0.5rem;
+    background-color: #ff0f13;
+    border-radius: 50%;
+    display: inline-block;
+  }
+}
+
+.heading-primary {
+  font-size: 4rem;
+  font-weight: 300;
+  border-radius: 3px;
+  max-width: fit-content;
+  white-space: nowrap;
+  span {
+    color: #ff0f13;
+  }
+}
+
+.heading-secondary {
+  font-size: $default-font-size;
+  font-weight: 500;
+}
+
+.heading-tertiary {
+  font-size: 3rem;
+  font-weight: 300;
+  border-radius: 3px;
+  white-space: nowrap;
+}
+
+.heading-4 {
+  font-size: 2rem;
+  font-weight: 400;
+  border-radius: 3px;
+  white-space: nowrap;
+
+  &-blog {
+    font-weight: 200;
+    font-size: $default-font-size;
+  }
+}
+
+.blog__info {
+  text-align: center;
+  &--title {
+    white-space: nowrap;
+    font-size: 2rem;
+    font-weight: 400;
+  }
+
+  &--date-author {
+    font-size: $default-font-size;
+    font-weight: 200;
+    white-space: nowrap;
+
+    &-span {
+      font-weight: 400;
+    }
+  }
+}
+
+.paragraph {
+  border-radius: 3px;
+  max-width: fit-content;
+  letter-spacing: 2px;
+  font-size: $default-font-size;
+
+  @include respond(phone) {
+    white-space: normal;
+  }
+}
+
+.footer__heading {
+  font-size: 2rem;
+}
+
+.footer__info {
+  font-size: $default-font-size;
+  li {
+    list-style: none;
+  }
+  a {
+    text-decoration: none;
+    color: var(--color-white);
+  }
+}
+
+.link {
+  text-decoration: none;
+  color: var(--color-black);
+}
+
+.underline {
+  text-decoration: underline;
+}

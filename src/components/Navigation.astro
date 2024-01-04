@@ -1,0 +1,69 @@
+<nav class="navigation__nav">
+  <ul class="navigation__list">
+    <li class="navigation__item">
+      <a class="link" href="#home">Home</a>
+    </li>
+    <li class="navigation__item">
+      <a class="link" href="#projects">Projects</a>
+    </li>
+    <li class="navigation__item">
+      <a class="link" href="#aboutme">About Me</a>
+    </li>
+    <li class="navigation__item">
+      <a class="link" href="#blog">Blog</a>
+    </li>
+  </ul>
+</nav>
+
+<style lang="scss">
+  .navigation {
+    &__list {
+      list-style: none;
+      position: absolute;
+      margin-top: 3rem;
+      margin-left: 3rem;
+    }
+
+    &__item {
+      font-size: 2rem;
+      a {
+        z-index: 7000;
+      }
+    }
+  }
+</style>
+
+<style lang="scss" is:global>
+  @use "../styles/abstracts/mixins" as *;
+  @use "../styles/base/animations" as *;
+  .navigation {
+    &__nav {
+      position: fixed;
+      opacity: 0;
+      right: 0;
+      top: 0;
+    }
+
+    &__item {
+      font-size: 2rem;
+      line-height: 1.7;
+      a {
+        z-index: 7000;
+      }
+    }
+
+    &__checkbox:checked ~ &__nav {
+      opacity: 1;
+      width: 35rem;
+      height: 100%;
+      z-index: 5000;
+      background-color: rgba(220, 20, 60, 0.5);
+      animation-name: moveInRight;
+      animation-duration: 1s;
+
+      @include respond(phone) {
+        width: 25rem;
+      }
+    }
+  }
+</style>

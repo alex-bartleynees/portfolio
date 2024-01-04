@@ -1,0 +1,23 @@
+<article class="welcome" id="home">
+  <div class="welcome__text-box">
+    <h1 class="heading-primary animation-default" id="alex-bartleynees">
+      Hey! I'm <strong>Alex</strong><span>.</span>
+    </h1>
+    <p class="paragraph nowrap u-margin-top-small animation-default">
+      A software developer enthused about crafting beautiful code.
+    </p>
+  </div>
+</article>
+
+<style lang="scss">
+  @use "../styles/abstracts/" as *;
+
+  .welcome {
+    width: 50vw;
+    margin: 10rem auto 0 auto;
+
+    @include respond(phone) {
+      width: 100%;
+    }
+  }
+</style>

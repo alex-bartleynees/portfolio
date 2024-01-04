@@ -1,0 +1,98 @@
+---
+const { title, link, imageUrl, data } = Astro.props;
+const { Content } = await data.render();
+---
+
+<div class="card animation-card">
+  <div class="card__picture card__picture">&nbsp;</div>
+  <h2 class="card__heading">
+    <a href={link}
+      ><span class="card__heading-span card__heading-span">{title}</span>
+    </a>
+  </h2>
+  <div class="card__details">
+    <Content />
+  </div>
+</div>
+
+<style lang="scss" define:vars={{ imageUrl }}>
+  @use "../styles/abstracts/" as *;
+
+  .card {
+    position: relative;
+    height: 52rem;
+    width: 100%;
+    border-radius: 3px;
+    box-shadow: $box-shadow-default;
+    overflow: hidden;
+
+    &__picture {
+      background-size: cover;
+      height: 23rem;
+      background-blend-mode: screen;
+      border-top-left-radius: 3px;
+      border-top-right-radius: 3px;
+      background-image: var(--imageUrl);
+    }
+
+    &__heading {
+      font-size: 2.8rem;
+      font-weight: 300;
+      text-transform: uppercase;
+      text-align: right;
+      position: absolute;
+      top: 12rem;
+      right: 2rem;
+      width: 75%;
+      transition: transform 0.5s;
+
+      &:hover {
+        transform: translateY(-1rem);
+      }
+      &:hover::after {
+        transform: translateY(1rem);
+      }
+
+      a {
+        text-decoration: none;
+        color: var(--color-white);
+      }
+
+      &-span {
+        padding: 1rem 1.5rem;
+        -webkit-box-decoration-break: clone;
+        box-decoration-break: clone;
+
+        background-image: linear-gradient(
+          to right bottom,
+          rgba($color-red-light, 0.85),
+          rgba($color-red-dark, 0.85)
+        );
+      }
+    }
+  }
+</style>
+
+<style lang="scss" is:global>
+  .card {
+    &__details {
+      padding: 3rem;
+
+      ul {
+        list-style: none;
+        width: 80%;
+        margin: 0 auto;
+
+        li {
+          text-align: center;
+          font-size: 1.5rem;
+          padding: 1rem;
+
+          &:not(:last-child) {
+            border-bottom: 1px solid var(--color-grey-light-2);
+          }
+        }
+      }
+    }
+  }
+</style>
