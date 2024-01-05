@@ -11,7 +11,7 @@ const groupedProjects = projects?.reduce(
     acc[acc.length - 1].push(item);
     return acc;
   },
-  [[]]
+  [[]] as (typeof projects)[]
 );
 ---
 
