@@ -25,6 +25,7 @@ const { Content } = await data.render();
     border-radius: 3px;
     box-shadow: $box-shadow-default;
     overflow: hidden;
+    background-color: var(--color-surface-secondary);
 
     &__picture {
       background-size: cover;
@@ -55,7 +56,7 @@ const { Content } = await data.render();
 
       a {
         text-decoration: none;
-        color: var(--color-white);
+        color: var(--color-surface-primary);
       }
 
       &-span {
@@ -65,8 +66,8 @@ const { Content } = await data.render();
 
         background-image: linear-gradient(
           to right bottom,
-          rgba($color-red-light, 0.85),
-          rgba($color-red-dark, 0.85)
+          rgba($color-primary-light, 0.85),
+          rgba($color-primary-dark, 0.85)
         );
       }
     }
