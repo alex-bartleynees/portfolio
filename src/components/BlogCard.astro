@@ -1,0 +1,57 @@
+---
+import FormattedDate from "./FormattedDate.astro";
+const { blogLink, blogImage, blogTitle, blogAuthor, blogDate } = Astro.props;
+---
+
+<article class="container">
+  <a href={`blog/${blogLink}`}>
+    <div class="blog-card">&nbsp;</div>
+  </a>
+
+  <div class="blog__info">
+    <h5 class="blog__info--title">{blogTitle}</h5>
+    <h6 class="blog__info--date-author">
+      <FormattedDate date={blogDate} /> by
+      <span class="blog__info--date-author blog__info--date-author-span"
+        >{blogAuthor}</span
+      >
+    </h6>
+  </div>
+</article>
+
+<style lang="scss" define:vars={{ blogImage }}>
+  @use "../styles/abstracts/" as *;
+
+  .container:first-child {
+    margin-inline-start: 1rem;
+  }
+
+  .container:last-child {
+    margin-inline-end: 1rem;
+  }
+
+  .blog-card {
+    position: relative;
+    height: 25rem;
+    width: 25rem;
+    border-radius: 3px;
+    box-shadow: $box-shadow-default;
+    overflow: hidden;
+    background-image: var(--blogImage);
+    background-size: cover;
+    margin-right: 20rem;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    transition: all 0.5s;
+    margin: auto;
+
+    &:hover {
+      transform: scale(1.05);
+      filter: blur(2px);
+    }
+    &:hover::after {
+      transform: scale(1);
+      filter: blur(0px);
+    }
+  }
+</style>

@@ -1,0 +1,71 @@
+---
+import { getCollection } from "astro:content";
+import BlogCard from "./BlogCard.astro";
+const posts = (await getCollection("blog")).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+---
+
+<section class="blog u-margin-top-huge" id="blog">
+  <div class="u-center-text">
+    <h3 class="heading-tertiary">Blog Posts</h3>
+    <h4 class="heading-4 heading-4-blog u-margin-bottom-medium">
+      News & Updates
+    </h4>
+  </div>
+  <div class="flex-row">
+    {
+      posts.map((post) => (
+        <BlogCard
+          blogLink={post.slug}
+          blogImage={`url(${post.data.heroImage})`}
+          blogTitle={post.data.title}
+          blogAuthor={post.data.author}
+          blogDate={post.data.pubDate}
+        />
+      ))
+    }
+  </div>
+
+  <style lang="scss">
+    @use "../styles/abstracts/" as *;
+
+    .blog {
+      position: relative;
+      background-color: var(--color-grey-light-1);
+      padding: 5rem 0 15rem 0;
+      margin-top: -10rem;
+
+      @include respond(tab-port) {
+        padding: 5rem 0 15rem 0;
+      }
+    }
+
+    .flex-row {
+      display: flex;
+      gap: 1rem;
+      overflow: auto;
+      max-width: $grid-width;
+      margin: 0 auto;
+      justify-content: center;
+    }
+
+    .blog__post {
+      width: 50vw;
+      margin: 10rem auto 0 auto;
+
+      @include respond(phone) {
+        width: 100%;
+      }
+      &--photo--1 {
+        height: 50%;
+        width: 50%;
+      }
+
+      &--photo--2 {
+        height: 100%;
+        width: 100%;
+      }
+    }
+  </style>
+</section>

@@ -3,7 +3,7 @@ const { title, link, imageUrl, data } = Astro.props;
 const { Content } = await data.render();
 ---
 
-<article class="card animation-card">
+<article class="card animation-card" id={data.slug}>
   <div class="card__picture card__picture">&nbsp;</div>
   <h2 class="card__heading">
     <a href={link}

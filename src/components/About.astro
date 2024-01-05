@@ -1,0 +1,59 @@
+<section class="about" id="aboutme">
+  <div class="row">
+    <h3 class="heading-tertiary">About</h3>
+    <p class="paragraph paragraph padding-top-2">
+      I'm a software developer with skills in HTML, CSS, Javascript,
+      React/Redux, Express.js
+    </p>
+    <p class="paragraph paragraph padding-bottom-2">
+      and Node.js and take pride and pleasure in crafting beautiful code.
+    </p>
+  </div>
+  <div class="row">
+    <div class="col-1-of-2">
+      <div class="about__photo">
+        <img class="about__img" src="/images/alex.jpg" alt="" />
+      </div>
+    </div>
+    <div class="col-1-of-2">
+      <div class="about__bio">
+        <h4 class="heading-4">Bio</h4>
+        <p class="paragraph paragraph padding-top-2 padding-bottom-2">
+          I previously worked as a brewer before deciding to change careers and
+          went back to university to pursue a degree in Philosophy where I
+          discovered a passion for problem-solving, logic and creative thinking.
+          My interest in problem solving and logic led me to software
+          development and I made the decision to study at Enspiral Dev Academy
+          where I learnt the foundations of web development.
+        </p>
+
+        <p class="paragraph">
+          <a
+            class="link underline"
+            target="_blank"
+            href="/img/AlexanderBartleyNeesCV.pdf">Resume</a
+          >
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style lang="scss">
+  @use "../styles/abstracts/" as *;
+
+  .about {
+    width: 50vw;
+    margin: 0 auto 0 auto;
+
+    @include respond(phone) {
+      width: 100%;
+    }
+
+    &__img {
+      height: 100%;
+      width: 80%;
+      filter: grayscale(80%);
+    }
+  }
+</style>
