@@ -10,4 +10,5 @@ export default defineConfig({
   prefetch: true,
   site: "https://alex-bartleynees.github.io/",
   base: "/",
-});
+  trailingSlash: "never",
+})
