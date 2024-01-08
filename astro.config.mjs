@@ -9,6 +9,5 @@ export default defineConfig({
   integrations: [mdx(), sitemap()],
   prefetch: true,
   site: "https://alex-bartleynees.github.io/",
-  base: "/portfolio_v2",
-  trailingSlash: "never",
+  base: "/",
 });
