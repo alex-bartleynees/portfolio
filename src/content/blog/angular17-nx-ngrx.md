@@ -1,6 +1,6 @@
 ---
 title: "NX, NGRX Signal Store and Angular 17"
-pubDate: "January 25 2024"
+pubDate: "January 27 2024"
 heroImage: "/images/angular17logo.jpeg"
 author: "Alex Bartley Nees"
 ---
