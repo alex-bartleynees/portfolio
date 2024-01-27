@@ -22,6 +22,10 @@ const { title, description, pubDate, author } = Astro.props;
           width: 100%;
         }
       }
+      .date {
+        font-weight: 500;
+        margin-block: 0;
+      }
     </style>
   </head>
 
@@ -30,9 +34,9 @@ const { title, description, pubDate, author } = Astro.props;
     <main>
       <article class="blog__post">
         <h1 class="heading-primary">{title}</h1>
-        <h2 class="heading-secondary">
+        <p class="date">
           <FormattedDate date={pubDate} /> by {author}
-        </h2>
+        </p>
         <hr class="u-margin-bottom-5" />
         <slot />
       </article>
