@@ -27,6 +27,10 @@ h1, h1.heading-primary {
   border-radius: 3px;
   max-width: fit-content;
   white-space: nowrap;
+
+  @media (max-width: 37.5em) {
+    white-space: normal;
+  }
   span {
     color: #ff0f13;
   }
