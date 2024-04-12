@@ -1,6 +1,6 @@
 ---
 title: "Calculator"
-link: "https://hungry-volhard-6e3aba.netlify.app/"
+link: "https://alex-bn-calculator.netlify.app/"
 heroImage: "/images/calculatorapp.png"
 ---
 
