@@ -49,7 +49,7 @@ The repository pattern is a design pattern that helps us to manage data access l
 
 The application layer defines what tasks the software is supposed to do and the problems our domain is supposed to solve. This layer mustn’t contain domain knowledge but coordinate our tasks and delegate the domain knowledge to the domain layer. For this application, this layer contains our commands and queries, data transfer objects (DTOs), and validators.
 
-#### Command Query Responsibility Segregation (CRQS):
+#### Command Query Responsibility Segregation:
 
 The CQRS pattern is designed to to separate our models for reading and updating data. As our application grows, separating our queries and our updates helps us to maintain our code. There are a lot of ways to implement the CRQS pattern that can become very complex, for example, you might have separate databases for reads and writes. For this application, I used MediatR to implement CRQS with a single database simply using folders to seperate our models. MediatR is a Nuget package that implements the mediator pattern. In our application, we have specific folders to contain our commands and our queries. For handling our Suggestions commands and queries, I have a Suggestions folder with separate folders for commands and queries. This makes it clear where we are querying data and where we are writing data.
 
