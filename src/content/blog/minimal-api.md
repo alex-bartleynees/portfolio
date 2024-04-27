@@ -78,7 +78,7 @@ Extension method to register our endpoints:
 
 ## Conclusion:
 
-Minimal APIs are great way to build apis in .NET that allow for a great deal of flexibility and have many of the same ccapabilities as controller based APIs while the opt-in model allows for improved performance.
+Minimal APIs are great way to build apis in .NET that allow for a great deal of flexibility and have many of the same capabilities as controller based APIs while the opt-in model allows for improved performance.
 
 Check out all the code here! &rarr;
 <a class="link underline" href="https://github.com/alex-bartleynees/ProductFeedback.API_V2">Minimal Api Github repo</a>
