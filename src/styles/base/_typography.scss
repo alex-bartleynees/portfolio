@@ -63,9 +63,9 @@ h4, .heading-4 {
 .blog__info {
   text-align: center;
   &--title {
-    white-space: nowrap;
     font-size: 2rem;
     font-weight: 400;
+    max-width: 30rem;
   }
 
   &--date-author {
