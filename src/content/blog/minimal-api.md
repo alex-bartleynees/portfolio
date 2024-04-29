@@ -7,6 +7,8 @@ author: "Alex Bartley Nees"
 
 <h2 class=padding-bottom-2>Building a .NET Minimal API with Clean Architecture and MediatR</h2>
 
+<img class=u-margin-bottom-small alt=".net logo" src="/images/.net-image.png" />
+
 ## Minimal APIs:
 
 Minimal APIs in .NET are a way to create APIs with minimal dependencies. Minimal APIs focus on an “opt-in” model where we can choose which features we want to use as opposed to the traditional MVC API architecture with an “opt-out” model. This leads to Minimal APIs having increased performance due to lower overhead and fewer steps in the request-handling pipeline. This means that Minimal APIs are great for high-performance scenarios. The simplicity of MInimal APIs also means they can be quick to set up and get running.
