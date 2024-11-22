@@ -1,0 +1,7 @@
+services:
+  portfolio:
+    build: ./
+    image: creativefree/portfolio-site:latest
+    container_name: portfolio-site
+    ports:
+      - 4321:4321

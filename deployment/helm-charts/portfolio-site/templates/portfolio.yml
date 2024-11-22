@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: portfolio-site
+      component: frontend
+  template:
+    metadata:
+      labels:
+        app: portfolio-site
+        component: frontend
+    spec:
+      containers:
+        - name: nodejs
+          image: creativefree/portfolio-site:latest
+          imagePullPolicy: 'Always'
+          resources:
+            requests:
+              memory: "128Mi"
+              cpu: "100m"
+            limits:
+              memory: "256Mi"
+              cpu: "200m"

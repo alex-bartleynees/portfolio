@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: portfolio-site-svc
+  labels: 
+    app: portfolio-site
+    component: frontend
+spec:
+  selector:
+    app: portfolio-site
+    component: frontend
+  ports:
+    - protocol: TCP
+      port: 4321
+      targetPort: 4321
