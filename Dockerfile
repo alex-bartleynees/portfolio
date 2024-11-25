@@ -22,7 +22,7 @@ RUN npm ci --omit-dev
 
 # Copy build output
 COPY --from=build /app/dist ./dist
-COPY --from=build /app/node_modules/./@astrojs ./node_modules/./@astrojs
+COPY --from=build /app/run-server.js ./
 
-CMD ["node", "./dist/server/entry.mjs"]
+CMD ["node", "./run-server.js"]
 EXPOSE 4321
