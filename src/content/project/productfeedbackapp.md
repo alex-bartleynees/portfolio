@@ -1,6 +1,6 @@
 ---
 title: "Product Feedback App"
-link: "https://github.com/alex-bartleynees/product-feedback-app"
+link: "/product-feedback-app/"
 heroImage: "/images/product-feedback.png"
 ---
 

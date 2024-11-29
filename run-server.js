@@ -2,26 +2,6 @@ import express from "express";
 import { handler as ssrHandler } from "./dist/server/entry.mjs";
 import compression from "compression";
 
-const logStatic = (prefix) => (req, res, next) => {
-  // Log the request before trying to serve static file
-  console.log(`[Static File Request] ${prefix}${req.path}`);
-
-  // Capture the original end function
-  const originalEnd = res.end;
-
-  // Override end to log the response
-  res.end = function (...args) {
-    console.log(
-      `[Static File Response] ${prefix}${req.path} - Status: ${res.statusCode}`,
-    );
-
-    // Call the original end function
-    originalEnd.apply(res, args);
-  };
-
-  next();
-};
-
 // The Express app is exported so that it can be used by serverless Functions.
 export function app() {
   const server = express();
@@ -39,15 +19,22 @@ export function app() {
     }),
   );
 
-  const base = "/";
   server.use(
-    base,
-    logStatic(base),
     express.static("dist/client/", {
-      // Optional: Add static serving options
       setHeaders: (res, path) => {
-        console.log(`[Static File Served] ${path}`);
+        if (
+          path.includes("._") ||
+          path.match(/\.(jpg|jpeg|png|gif|ico|svg|woff|woff2|ttf|eot)$/)
+        ) {
+          res.setHeader("Cache-Control", "public, max-age=31536000, immutable"); // 1 year
+        } else if (path.match(/\.(css|js)$/)) {
+          res.setHeader("Cache-Control", "public, max-age=86400"); // 1 day
+        } else {
+          res.setHeader("Cache-Control", "no-cache");
+        }
       },
+      etag: true,
+      lastModified: true,
     }),
   );
   server.use(ssrHandler);

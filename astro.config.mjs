@@ -8,7 +8,7 @@ import sitemap from "@astrojs/sitemap";
 export default defineConfig({
   integrations: [mdx(), sitemap()],
   prefetch: true,
-  site: "https://alex-bartleynees.github.io/",
+  site: "https://alexbartleynees.com",
   base: "/",
   output: "hybrid",
   adapter: node({
@@ -17,4 +17,5 @@ export default defineConfig({
   server: {
     port: 4321,
   },
+  trailingSlash: "always",
 });
