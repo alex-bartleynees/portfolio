@@ -1,7 +1,7 @@
 ---
 title: "Art Stable"
 link: "https://artstable.netlify.app/"
-heroImage: "/images/artstable.png"
+heroImage: "src/images/artstable.png"
 ---
 
 <ul>

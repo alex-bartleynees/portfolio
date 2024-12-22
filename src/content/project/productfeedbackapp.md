@@ -1,7 +1,7 @@
 ---
 title: "Product Feedback App"
 link: "/product-feedback-app/"
-heroImage: "/images/product-feedback.png"
+heroImage: "src/images/product-feedback.png"
 ---
 
 - Tech Used:

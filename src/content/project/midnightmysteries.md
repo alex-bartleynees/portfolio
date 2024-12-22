@@ -1,7 +1,7 @@
 ---
 title: "Midnight Mysteries"
 link: "https://github.com/alex-bartleynees/web-socket-mafia"
-heroImage: "/images/midnightmysteries.png"
+heroImage: "src/images/midnightmysteries.png"
 ---
 
 - Tech Used:

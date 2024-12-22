@@ -1,3 +1,8 @@
+---
+import {Image} from 'astro:assets'
+import portraitImage from "../images/portrait.jpg"
+---
+
 <section class="about" id="aboutme">
   <div class="row">
     <h3 class="heading-tertiary">About</h3>
@@ -10,7 +15,7 @@
   <div class="row">
     <div class="col-1-of-2">
       <div class="about__photo">
-        <img class="about__img" src="/images/portrait.jpg" alt="" />
+        <Image class="about__img" src={portraitImage} alt="A portrait image of Alex Bartley Nees" />
       </div>
     </div>
     <div class="col-1-of-2">

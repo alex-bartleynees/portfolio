@@ -17,7 +17,7 @@ const posts = (await getCollection("blog")).sort(
     {
       posts.map((post) => (
         <BlogCard
-          blogLink={post.slug}
+          blogLink={post.slug + "/"}
           blogImage={`url(${post.data.heroImage})`}
           blogTitle={post.data.title}
           blogAuthor={post.data.author}

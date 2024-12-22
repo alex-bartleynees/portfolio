@@ -1,7 +1,7 @@
 ---
 title: "Gatsby and Sanity.io"
 pubDate: "June 15 2021"
-heroImage: "/images/gatsby.jpeg"
+heroImage: "src/images/gatsby.jpeg"
 author: "Alex Bartley Nees"
 ---
 
