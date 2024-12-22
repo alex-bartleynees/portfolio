@@ -4,7 +4,7 @@ const { blogLink, blogImage, blogTitle, blogAuthor, blogDate } = Astro.props;
 ---
 
 <article class="container">
-  <a href={`blog/${blogLink}`} data-astro-prefetch>
+  <a href={`blog/${blogLink}`} data-astro-prefetch aria-label="link to blog post">
     <div class="blog-card">&nbsp;</div>
   </a>
 

@@ -10,7 +10,7 @@ import Navigation from "./Navigation.astro";
 
   <input type="checkbox" class="navigation__checkbox" id="navi-toggle" />
 
-  <label for="navi-toggle" class="navigation__button" role="button">
+  <label for="navi-toggle" class="navigation__button">
     <span class="navigation__icon">&nbsp;</span>
     <p class="navi-text">Display navigation sidebar</p>
   </label>
@@ -25,7 +25,15 @@ import Navigation from "./Navigation.astro";
   @use "../styles/abstracts/variables" as *;
 
   .navi-text {
-    visibility: hidden;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
   }
   .navigation {
     width: 50vw;
