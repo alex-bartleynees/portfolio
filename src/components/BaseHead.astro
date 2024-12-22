@@ -12,11 +12,13 @@ interface Props {
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
 const { title, description, image = "/blog-placeholder-1.jpg" } = Astro.props;
+import { GoogleFontsOptimizer } from "astro-google-fonts-optimizer";
 ---
 
 <!-- Global Metadata -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="description" content="A portfolio and blog site by Alex Bartley Nees featuring a collection of projects and blog posts about coding using Javascript, Typescript, C#, Angular, React, NodeJS, SQL and more"/>
 <link rel="icon" type="image/x-icon" href="/favicon-32x32.png" />
 <meta name="generator" content={Astro.generator} />
   <link rel="sitemap" href="/sitemap-index.xml" />
@@ -24,9 +26,8 @@ const { title, description, image = "/blog-placeholder-1.jpg" } = Astro.props;
 <!-- Font preloads -->
 <link rel="preconnect" href="https://fonts.gstatic.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" />
-<link
-  href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-  rel="stylesheet"
+<GoogleFontsOptimizer
+  url="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
 />
 
 <!-- Canonical URL -->

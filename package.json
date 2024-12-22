@@ -16,6 +16,8 @@
     "@astrojs/rss": "^4.0.1",
     "@astrojs/sitemap": "^3.0.4",
     "astro": "^4.16.14",
+    "astro-compress": "^2.3.5",
+    "astro-google-fonts-optimizer": "^0.2.2",
     "compression": "^1.7.5",
     "express": "^4.21.1",
     "sass": "^1.69.7"

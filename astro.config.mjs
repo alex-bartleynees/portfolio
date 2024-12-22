@@ -4,9 +4,11 @@ import node from "@astrojs/node";
 
 import sitemap from "@astrojs/sitemap";
 
+import compress from "astro-compress";
+
 // https://astro.build/config
 export default defineConfig({
-  integrations: [mdx(), sitemap()],
+  integrations: [mdx(), sitemap(), compress()],
   prefetch: true,
   site: "https://alexbartleynees.com",
   base: "/",
@@ -18,4 +20,5 @@ export default defineConfig({
     port: 4321,
   },
   trailingSlash: "always",
+  compressHTML: true
 });
