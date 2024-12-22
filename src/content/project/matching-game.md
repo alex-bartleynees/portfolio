@@ -1,7 +1,7 @@
 ---
 title: "Matching Game"
 link: "https://alex-bartleynees.github.io/Matching-game/"
-heroImage: "src/images/matchinggame.png"
+heroImage: "/images/matchinggame.png"
 ---
 
 - Tech Used:

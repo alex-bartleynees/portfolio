@@ -1,7 +1,7 @@
 ---
 title: "Building a .NET Minimal API"
 pubDate: "April 27 2024"
-heroImage: "src/images/net-image.png"
+heroImage: "/images/net-image.png"
 author: "Alex Bartley Nees"
 ---
 

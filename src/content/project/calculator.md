@@ -1,7 +1,7 @@
 ---
 title: "Calculator"
 link: "https://alex-bn-calculator.netlify.app/"
-heroImage: "src/images/calculatorapp.png"
+heroImage: "/images/calculatorapp.png"
 ---
 
 - Tech Used:
