@@ -1,7 +1,7 @@
 name: Build and Deploy with Helm
 on:
   push:
-    branches: [node-ssr]
+    branches: [main]
 
 jobs:
   build-and-deploy:
