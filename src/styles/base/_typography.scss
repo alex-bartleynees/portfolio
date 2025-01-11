@@ -21,34 +21,41 @@ body {
   }
 }
 
-h1, h1.heading-primary {
+h1,
+h1.heading-primary {
   font-size: 4rem;
   font-weight: 300;
   border-radius: 3px;
   max-width: fit-content;
   white-space: nowrap;
+  text-wrap: balance;
 
   @media (max-width: 37.5em) {
     white-space: normal;
   }
+
   span {
     color: #ff0f13;
   }
 }
 
-h2, .heading-secondary {
+h2,
+.heading-secondary {
   font-size: 3rem;
   font-weight: 500;
 }
 
-h3, .heading-tertiary {
+h3,
+.heading-tertiary {
   font-size: 2.5rem;
   font-weight: 300;
   border-radius: 3px;
   white-space: nowrap;
+  margin-block: 2rem;
 }
 
-h4, .heading-4 {
+h4,
+.heading-4 {
   font-size: 2rem;
   font-weight: 400;
   border-radius: 3px;
@@ -62,6 +69,7 @@ h4, .heading-4 {
 
 .blog__info {
   text-align: center;
+
   &--title {
     font-size: 2rem;
     font-weight: 400;
@@ -100,9 +108,11 @@ p {
 
 .footer__info {
   font-size: $default-font-size;
+
   li {
     list-style: none;
   }
+
   a {
     text-decoration: none;
     color: var(--color-surface-primary);
@@ -116,4 +126,12 @@ p {
 
 .underline {
   text-decoration: underline;
+}
+
+ul {
+  margin-inline: 4rem;
+}
+
+li {
+  font-size: 1.4rem;
 }
