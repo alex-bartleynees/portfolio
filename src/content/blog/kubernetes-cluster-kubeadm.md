@@ -48,7 +48,7 @@ An important step was making sure that specific kernel parameters were configure
 
 Without these configurations, pod-to-pod communication and network policies wouldn't work properly.
 
-### Initialising the Kubernetes Control Plane
+### Initialising the Control Plane
 
 After installing the prerequisites, the next step was initializing the Kubernetes control plane. The control plane manages the overall state of the cluster and when we run `kubeadm init`, it sets up these components:
 
@@ -131,7 +131,7 @@ Can easily see all deployed applications with helm ls
 
 This made it simple to manage deployments of my blog and other projects to the cluster.
 
-### Continuous Deployment with GitHub Actions
+### Continuous Deployment
 
 To make deploying to my cluster easy, I use GitHub Actions. When I push changes to the main branch, GitHub Actions automatically:
 
