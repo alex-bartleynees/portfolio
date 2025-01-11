@@ -124,10 +124,10 @@ I needed this for running an instance of PostgresSQL on my cluster.
 After setting up all the cluster components, I used Helm to deploy my applications. I store my Helm charts in Docker Hub, which makes it easy to version and distribute them. Each application (like my blog) has its own Helm chart that defines how it should run in Kubernetes.
 The deployment process:
 
-Each application gets its own namespace
-Configuration values are stored in separate files
-Helm handles installing and upgrading the applications
-Can easily see all deployed applications with helm ls
+- Each application gets its own namespace
+- Configuration values are stored in separate files
+- Helm handles installing and upgrading the applications
+- Can easily see all deployed applications with helm ls
 
 This made it simple to manage deployments of my blog and other projects to the cluster.
 
@@ -147,10 +147,10 @@ This means whenever I make changes to my code, they're automatically deployed to
 Setting up a Kubernetes cluster from scratch with kubeadm was a great learning experience. I now have a better understanding of how Kubernetes works under the hood - from container networking to storage and ingress configurations. While it took more work than using a managed service, the knowledge gained was invaluable.
 The cluster is now successfully running my blog and several personal projects with:
 
-NGINX Ingress handling incoming traffic
-cert-manager automatically managing HTTPS certificates
-OpenEBS providing storage for databases
-GitHub Actions automating all deployments
+- NGINX Ingress handling incoming traffic
+- cert-manager automatically managing HTTPS certificates
+- OpenEBS providing storage for databases
+- GitHub Actions automating all deployments
 
 Using Ansible to automate the setup means I can easily recreate the cluster if needed, and the experience has made me much more confident in working with Kubernetes.
 
