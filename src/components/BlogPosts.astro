@@ -13,7 +13,7 @@ const posts = (await getCollection("blog")).sort(
       News & Updates
     </h4>
   </div>
-  <div class="flex-row">
+  <div class="flex-row container">
     {
       posts.map((post) => (
         <BlogCard
@@ -29,6 +29,14 @@ const posts = (await getCollection("blog")).sort(
 
   <style lang="scss">
     @use "../styles/abstracts/" as *;
+  
+    .container {
+       -ms-overflow-style: none;  /* Internet Explorer 10+ */
+        scrollbar-width: none;  /* Firefox */
+      }
+    .container::-webkit-scrollbar { 
+        display: none;  /* Safari and Chrome */
+    }
 
     .blog {
       position: relative;
