@@ -1,6 +1,6 @@
 ---
 title: "Product Feedback App"
-link: "/product-feedback-app/"
+link: "https://product-feedback.alexbartleynees.com"
 heroImage: "/images/product-feedback.png"
 ---
 
