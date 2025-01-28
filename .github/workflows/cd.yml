@@ -47,7 +47,7 @@ jobs:
 
       - name: Update values.yaml with build tag
         run: |
-          sed -i "s/tag: .*/tag: ${{ steps.tag.outputs.build_id }}/" deployment/helm-charts/product-feedback-app/values.yaml
+          sed -i "s/tag: .*/tag: ${{ steps.tag.outputs.build_id }}/" deployment/helm-charts/portfolio-site/values.yaml
           git add deployment/helm-charts/product-feedback-app/values.yaml
           git commit -m "Update image tag to ${{ steps.tag.outputs.build_id }}"
           git push origin main
