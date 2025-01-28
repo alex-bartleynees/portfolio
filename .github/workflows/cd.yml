@@ -7,19 +7,14 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     permissions:
-      contents: read
+      contents: write
       packages: write
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-
-      - name: Get Network Info
-        run: |
-          echo "IP Address:"
-          curl -s ifconfig.me
-          echo -e "\nFull route:"
-          curl -s ifconfig.co/json
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Login to Docker Hub
         uses: docker/login-action@v3
@@ -40,31 +35,24 @@ jobs:
             creativefree/portfolio-site:latest
             creativefree/portfolio-site:${{ steps.tag.outputs.build_id }}
 
-      - name: Install kubectl
-        uses: azure/setup-kubectl@v4
-        with:
-          version: "latest"
-
       - name: Install Helm
         uses: azure/setup-helm@v3
         with:
           version: "latest"
 
-      - name: Add kubernetes configuration
+      - name: Set Git user info
         run: |
-          mkdir ~/.kube
-          echo "${{ secrets.KUBE_CONFIG }}" > ~/.kube/config
-          chmod 600 ~/.kube/config
+          git config --global user.email "${{ secrets.GIT_EMAIL }}"
+          git config --global user.name "${{ secrets.GIT_NAME }}"
+
+      - name: Update values.yaml with build tag
+        run: |
+          sed -i "s/tag: .*/tag: ${{ steps.tag.outputs.build_id }}/" deployment/helm-charts/product-feedback-app/values.yaml
+          git add deployment/helm-charts/product-feedback-app/values.yaml
+          git commit -m "Update image tag to ${{ steps.tag.outputs.build_id }}"
+          git push origin main
 
       - name: Package and Push Helm Chart
         run: |
           helm package ./deployment/helm-charts/portfolio-site
           helm push portfolio-site-*.tgz oci://registry-1.docker.io/creativefree
-
-      - name: Deploy with Helm
-        run: |
-          helm upgrade portfolio-site ./deployment/helm-charts/portfolio-site \
-            --install \
-            --set image.repository=creativefree/portfolio-site \
-            --set image.tag=${{ steps.tag.outputs.build_id }} \
-            --namespace portfolio-site
