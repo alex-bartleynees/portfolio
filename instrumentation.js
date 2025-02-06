@@ -8,7 +8,7 @@ import { SemanticResourceAttributes } from "@opentelemetry/semantic-conventions"
 
 const sdk = new NodeSDK({
   resource: new Resource({
-    [SemanticResourceAttributes.SERVICE_NAME]: "your-service-name",
+    [SemanticResourceAttributes.SERVICE_NAME]: "portfolio-site",
   }),
   traceExporter: new OTLPTraceExporter({
     url: "http://my-collector-collector.monitoring.svc.cluster.local:4318/v1/traces",
