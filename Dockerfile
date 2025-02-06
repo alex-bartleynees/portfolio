@@ -23,6 +23,7 @@ RUN npm ci --omit-dev
 # Copy build output
 COPY --from=build /app/dist ./dist
 COPY --from=build /app/run-server.js ./
+COPY --from=build /app/instrumentation.js ./
 
-CMD ["node", "./run-server.js"]
+CMD ["/bin/sh", "-c", "node ./instrumentation.js && node ./run-server.js"]
 EXPOSE 4321
