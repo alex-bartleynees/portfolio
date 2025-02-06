@@ -5,16 +5,7 @@ import { OTLPTraceExporter } from "@opentelemetry/exporter-trace-otlp-proto";
 import { OTLPMetricExporter } from "@opentelemetry/exporter-metrics-otlp-proto";
 import { Resource } from "@opentelemetry/resources";
 import { SemanticResourceAttributes } from "@opentelemetry/semantic-conventions";
-import * as client from "prom-client";
 
-// Initialize Prometheus Registry and collect default metrics
-const register = new client.Registry();
-client.collectDefaultMetrics({ register });
-
-// Export the register for the metrics endpoint
-export { register };
-
-// OpenTelemetry SDK setup
 const sdk = new NodeSDK({
   resource: new Resource({
     [SemanticResourceAttributes.SERVICE_NAME]: "portfolio-site",
