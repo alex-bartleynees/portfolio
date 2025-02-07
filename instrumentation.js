@@ -26,6 +26,14 @@ export const totalViewsCounter = meter.createCounter("total_views", {
   description: "Total number of views across all pages",
 });
 
+export const trackPageView = (pathname) => {
+  console.log("track page view", pathname);
+  pageViewsCounter.add(1, {
+    page: pathname,
+  });
+  totalViewsCounter.add(1);
+};
+
 const sdk = new NodeSDK({
   resource: resource,
   traceExporter: new OTLPTraceExporter({

@@ -1,10 +1,24 @@
 import express from "express";
 import { handler as ssrHandler } from "./dist/server/entry.mjs";
 import compression from "compression";
+import { trackPageView } from "./instrumentation.js";
 
 // The Express app is exported so that it can be used by serverless Functions.
 export function app() {
   const server = express();
+
+  // Add tracking middleware
+  server.use((req, res, next) => {
+    // Only track actual page views, not asset requests
+    if (
+      !req.path.match(
+        /\.(jpg|jpeg|webp|png|gif|ico|svg|woff|woff2|ttf|eot|css|js)$/,
+      )
+    ) {
+      trackPageView(req.path);
+    }
+    next();
+  });
 
   server.use(
     compression({

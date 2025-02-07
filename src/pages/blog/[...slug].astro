@@ -1,7 +1,6 @@
 ---
 import { type CollectionEntry, getCollection } from "astro:content";
 import BlogPost from "../../layouts/BlogPost.astro";
-import { trackPageView } from "../../tracking.js"
 
 export async function getStaticPaths() {
   const posts = await getCollection("blog");
@@ -15,8 +14,6 @@ type Props = CollectionEntry<"blog">;
 const post = Astro.props;
 const { Content } = await post.render();
 
-
-trackPageView(Astro.url.pathname);
 ---
 
 <BlogPost {...post.data}>
