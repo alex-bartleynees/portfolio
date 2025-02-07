@@ -17,23 +17,6 @@ const resource = Resource.default().merge(
   }),
 );
 
-const meter = metrics.getMeter("page-views");
-export const pageViewsCounter = meter.createCounter("page_views_total", {
-  description: "Number of views per page",
-});
-
-export const totalViewsCounter = meter.createCounter("total_views", {
-  description: "Total number of views across all pages",
-});
-
-export const trackPageView = (pathname) => {
-  console.log("track page view", pathname);
-  pageViewsCounter.add(1, {
-    page: pathname,
-  });
-  totalViewsCounter.add(1);
-};
-
 const sdk = new NodeSDK({
   resource: resource,
   traceExporter: new OTLPTraceExporter({
@@ -51,3 +34,20 @@ const sdk = new NodeSDK({
 });
 
 sdk.start();
+
+const meter = metrics.getMeter("page-views");
+export const pageViewsCounter = meter.createCounter("page_views_total", {
+  description: "Number of views per page",
+});
+
+export const totalViewsCounter = meter.createCounter("total_views", {
+  description: "Total number of views across all pages",
+});
+
+export const trackPageView = (pathname) => {
+  console.log("track page view", pathname);
+  pageViewsCounter.add(1, {
+    page: pathname,
+  });
+  totalViewsCounter.add(1);
+};
