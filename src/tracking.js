@@ -1,16 +1,8 @@
-import { metrics } from "@opentelemetry/api";
-
-const meter = metrics.getMeter("page-views");
-
-const pageViewsCounter = meter.createCounter("page_views_total", {
-  description: "Number of views per page",
-});
-
-const totalViewsCounter = meter.createCounter("total_views", {
-  description: "Total number of views across all pages",
-});
+import { pageViewsCounter } from "../instrumentation.js";
+import { totalViewsCounter } from "../instrumentation.js";
 
 export const trackPageView = (pathname) => {
+  console.log("track page view", pathname);
   pageViewsCounter.add(1, {
     page: pathname,
   });
