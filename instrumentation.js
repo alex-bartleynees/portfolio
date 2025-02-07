@@ -45,7 +45,6 @@ export const totalViewsCounter = meter.createCounter("total_views", {
 });
 
 export const trackPageView = (pathname) => {
-  console.log("track page view", pathname);
   pageViewsCounter.add(1, {
     page: pathname,
   });
