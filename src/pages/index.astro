@@ -7,6 +7,9 @@ import Welcome from "../components/Welcome.astro";
 import Projects from "../components/Projects.astro";
 import About from "../components/About.astro";
 import BlogPosts from "../components/BlogPosts.astro";
+import { trackPageView } from "../tracking.js"
+
+trackPageView(Astro.url.pathname);
 ---
 
 <!doctype html>
