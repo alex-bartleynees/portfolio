@@ -17,7 +17,7 @@ ArgoCD is a framework that runs as a controller in Kubernetes and handles deploy
 
 ## Deploying an application with ArgoCD
 
-I will walk you through the deployment process I used to configure and deploy my Kubernetes cluster and blog site. This involves creating a Git repository, adding a bootstrap folder with our Infrastructure as code to provision our infrastructure and cluster and a components folder with everything we want ArgoCD to deploy into our cluster. Check out the repository here on my Github if your're interested. Lets get started.
+I will walk you through the deployment process I used to configure and deploy my Kubernetes cluster and blog site. This involves creating a Git repository, adding a bootstrap folder with our Infrastructure as code to provision our infrastructure and cluster and a components folder with everything we want ArgoCD to deploy into our cluster. Check out the repository <a class="link underline" href="https://github.com/alex-bartleynees/portfolio-cluster/" target="_blank">here on my Github if your're interested.</a> Lets get started.
 
 ### Bootstrapping
 
