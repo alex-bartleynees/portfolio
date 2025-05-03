@@ -29,13 +29,13 @@ const posts = (await getCollection("blog")).sort(
 
   <style lang="scss">
     @use "../styles/abstracts/" as *;
-  
+
     .container {
-       -ms-overflow-style: none;  /* Internet Explorer 10+ */
-        scrollbar-width: none;  /* Firefox */
-      }
-    .container::-webkit-scrollbar { 
-        display: none;  /* Safari and Chrome */
+      -ms-overflow-style: none; /* Internet Explorer 10+ */
+      scrollbar-width: none; /* Firefox */
+    }
+    .container::-webkit-scrollbar {
+      display: none; /* Safari and Chrome */
     }
 
     .blog {
@@ -55,7 +55,6 @@ const posts = (await getCollection("blog")).sort(
       overflow: auto;
       max-width: $grid-width;
       margin: 0 auto;
-      justify-content: center;
     }
 
     .blog__post {
