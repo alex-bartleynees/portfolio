@@ -30,7 +30,7 @@ A root app helm chart is used to bootstrap the cluster, this tells ArgoCD to use
 This is an example of my specification for ArgoCD root app. For destination server we use the Kubernetes API server,
 the internal address is used as ArgoCD is running on the same cluster. For the source we specify our repo and provide the path to the components folder. The sync policy means ArgoCD will delete anything no longer defined in our Git repo and selfHeal set to true means ArgoCD will revert any manual changes made directly to the cluster and restore the state to what is defined in Git.
 
-![Argo cd root app](../../../public/images/Pasted%20image%2020250503123645.png)
+![Argo cd root app](../../../public/images/argo-root-app.png)
 
 ### Components
 
@@ -38,7 +38,7 @@ The components folder stores everything we want to deploy and manage via ArgoCD 
 
 Yaml definition for deploying my blog site with Argocd:
 
-![ArgoCD manifest](../../../public/images/Pasted%20image%2020250503131523.png)
+![ArgoCD manifest](../../../public/images/argocd-manifest.png)
 
 I will give a quick run through of how we define an application for ArgoCD in Yaml. First we specify we want an application resource, this represents a deployed application in an environment. Next we specify the sources, note that we can specify multiple sources. Here I have a git repository for my application code with the path to a helm chart and a helm chart I use for deploying an NGINX ingress from my Dockerhub container registry. Its important to note that ArgoCD does not use helm install command to install helm charts, but will run helm template and deploy the resulting manifest with kubectl apply. We can also put any kind of Kubernetes manifest in our repo and ArgoCD will deploy this.
 
