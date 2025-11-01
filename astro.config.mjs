@@ -14,11 +14,12 @@ export default defineConfig({
   base: "/",
   output: "hybrid",
   adapter: node({
-    mode: "middleware",
+    mode: "server",
   }),
   server: {
     port: 4321,
   },
   trailingSlash: "always",
-  compressHTML: true
+  compressHTML: false,
 });
+
