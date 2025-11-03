@@ -24,12 +24,6 @@ export function app() {
     compression({
       level: 6,
       threshold: 1000,
-      filter: (req, res) => {
-        if (req.headers["accept-encoding"]?.includes("gzip")) {
-          return compression.filter(req, res);
-        }
-        return false;
-      },
     }),
   );
 
