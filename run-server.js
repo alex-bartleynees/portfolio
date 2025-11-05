@@ -79,7 +79,7 @@ export function app() {
         } else if (path.match(/\.(css|js)$/)) {
           // CSS/JS with content hashes - cache aggressively
           // Astro typically generates hashed filenames like: main.a1b2c3d4.js
-          if (path.match(/\.[a-f0-9]{8,}\.(css|js)$/)) {
+          if (path.match(/\.[a-zA-Z0-9]{8,}\.(css|js)$/)) {
             // Hashed assets - treat as immutable
             res.setHeader(
               "Cache-Control",
